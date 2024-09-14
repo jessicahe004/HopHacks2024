@@ -6,7 +6,7 @@ const App: React.FC = () => {
   return (
     <div>
       <h1> map </h1>
-      <TestMap/>
+      <LoadMap/>
     </div>
   );
 };
