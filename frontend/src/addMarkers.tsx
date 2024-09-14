@@ -14,11 +14,13 @@ export const addMarkers = (map: mapboxgl.Map, hospitals: Hospital[]) => {
 
     const el = document.createElement('div');
     el.className = 'custom-marker';
-    el.style.backgroundColor = 'red';
-    el.style.width = '50px';
-    el.style.height = '50px';
+    el.style.backgroundColor = 'rgba(0, 0, 255, 0.4)'; // Translucent blue marker
+    el.style.width = '20px';
+    el.style.height = '20px';
     el.style.borderRadius = '50%';
     el.style.cursor = 'pointer';
+
+    el.style.transform = 'translate(-50%, -50%)'; // Center the marker
 
     if (!isNaN(hospital.lng) && !isNaN(hospital.lat)) {
       new mapboxgl.Marker(el)

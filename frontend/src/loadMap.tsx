@@ -53,7 +53,7 @@ const LoadMap: React.FC = () => {
         container: mapContainerRef.current as HTMLElement,
         style: 'mapbox://styles/mapbox/streets-v11',
         center: [-98.35, 39.50],  // Center the map over the US
-        zoom: 3,  // Set the initial zoom level
+        zoom: 15,  // Set the initial zoom level
       });
 
       // Add markers for each hospital
