@@ -3,14 +3,14 @@ import mapboxgl from 'mapbox-gl';
 import { addMarkers } from './addMarkers';  // Marker function
 
 // Set Mapbox access token
-mapboxgl.accessToken = 'pk.eyJ1IjoiamVzc2ljYWhlMDA0IiwiYSI6ImNtMTI5ZzdqazB6NHgyaXEybzVwdWV3aHcifQ.t-i13j3xOerkbdgplxGNtA';
+mapboxgl.accessToken = 'pk.eyJ1Ijoidmlyc2dhbmRoaSIsImEiOiJjbTEya21wNnAwZm4xMnFvaTAwemZxcDFrIn0.DSEyJcbaSyOpg29_UZeYoQ';
 
 // Define a type for the hospital data
 interface Hospital {
   name: string;
   lat: number;
   lng: number;
-  link: string;
+  website: string;
 }
 
 const LoadMap: React.FC = () => {
@@ -28,9 +28,9 @@ const LoadMap: React.FC = () => {
           // Extract and set hospital data from the API response
           const hospitalData = data.hospitals.map((hospital: any) => ({
             name: hospital.NAME,
-            lat: parseFloat(hospital.Y),  // Ensure lat is a number
-            lng: parseFloat(hospital.X),  // Ensure lng is a number
-            link: hospital.WEBSITE || '',  // Provide empty string if website is missing
+            lat: parseFloat(hospital.LATITUDE),  // Ensure lat is a number
+            lng: parseFloat(hospital.LONGITUDE),  // Ensure lng is a number
+            website: hospital.WEBSITE || '',  // Provide empty string if website is missing
           }));
 
           setHospitals(hospitalData);
@@ -46,6 +46,7 @@ const LoadMap: React.FC = () => {
   }, []);
 
   // Initialize the map once hospitals are loaded
+  <div>Printing the map now</div>
   useEffect(() => {
     if (mapContainerRef.current && hospitals.length > 0) {
       const map = new mapboxgl.Map({

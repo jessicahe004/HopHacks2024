@@ -1,10 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
 
-mapboxgl.accessToken = process.env.REACT_APP_MAPS_API as string;
+mapboxgl.accessToken = 'pk.eyJ1Ijoidmlyc2dhbmRoaSIsImEiOiJjbTEya21wNnAwZm4xMnFvaTAwemZxcDFrIn0.DSEyJcbaSyOpg29_UZeYoQ';
 
 const TestMap: React.FC = () => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
+  <div>Printing the map now</div>
 
   useEffect(() => {
     if (mapContainerRef.current) {
