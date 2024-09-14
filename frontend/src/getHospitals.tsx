@@ -5,11 +5,12 @@ interface Hospital {
     name: string;
     lat: number;
     lng: number;
+    link: string; 
     size: number; 
     wifi: number;
-    time: Date; 
+    time: Date;  
 }
-  
+
 const API_URL = 'https://localhost:8000/api/hospital';
 
 export const fetchHospitalData = async (): Promise<Hospital[]> => {
@@ -18,6 +19,6 @@ export const fetchHospitalData = async (): Promise<Hospital[]> => {
     return response.data;
   } catch (error) {
     console.error('Error fetching hospital data:', error);
-    throw error; 
+    throw error;
   }
 };

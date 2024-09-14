@@ -1,11 +1,12 @@
 import React from 'react';
-import GoogleMap from './loadMap';
+import LoadMap from './loadMap';
+import TestMap from './testMap';
 
 const App: React.FC = () => {
   return (
     <div>
-      <h1>My Google Maps App</h1>
-      <GoogleMap />
+      <h1> map </h1>
+      <TestMap/>
     </div>
   );
 };
